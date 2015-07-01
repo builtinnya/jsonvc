@@ -1,22 +1,47 @@
 {
+  "author": "Naoto Yokoyama <builtinnya@gmail.com>",
   "name": "jsonvc",
   "version": "0.0.0",
   "description": "A version control library for JSON data",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/builtinnya/jsonvc"
   },
+  "homepage": "https://github.com/builtinnya/jsonvc",
+  "bugs": {
+    "url": "https://github.com/builtinnya/jsonvc/issues",
+    "email": "builtinnya@gmail.com"
+  },
   "keywords": [
     "JSON"
   ],
-  "author": "Naoto Yokoyama <builtinnya@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/builtinnya/jsonvc/issues"
+  "main": "index.js",
+  "directories": {
+    "lib": "./src",
+    "doc": "./README.markdown"
   },
-  "homepage": "https://github.com/builtinnya/jsonvc"
+  "scripts": {
+    "jsfiles": "find . -name '*.js' ! -path './node_modules/*' ! -path './coverage/*'",
+    "jshint": "./node_modules/.bin/jshint `npm run -s jsfiles`",
+    "jscs": "./node_modules/.bin/jscs `npm run -s jsfiles`",
+    "mocha": "./node_modules/.bin/mocha --reporter spec",
+    "analyze": "npm run jscs && npm run jshint",
+    "test": "npm run analyze && npm run mocha",
+    "coverage-report": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- -R spec",
+    "travis": "npm run analyze && npm run coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf ./coverage"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "coveralls": "^2.11.2",
+    "istanbul": "^0.3.16",
+    "jscs": "^1.13.1",
+    "jshint": "^2.8.0",
+    "mocha": "^2.2.5",
+    "mocha-lcov-reporter": "0.0.2"
+  }
 }
