@@ -1,6 +1,6 @@
 # jsonvc
 
-[![Coverage Status](https://coveralls.io/repos/builtinnya/jsonvc/badge.svg)](https://coveralls.io/r/builtinnya/jsonvc)
+[![Coverage Status](https://coveralls.io/repos/builtinnya/jsonvc/badge.svg?branch=master)](https://coveralls.io/r/builtinnya/jsonvc?branch=master)
 
 jsonvc is a version control library for JSON data.
 
