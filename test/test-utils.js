@@ -53,6 +53,25 @@ describe('utils', function() {
     });
   });
 
+  describe('#deepClone', function() {
+    it('should deep-copy an object correctly', function() {
+      var obj1 = { a: [ { b: 1 }, { b: 2 } ], c: { d: 3 } };
+      var obj2 = _.deepClone(obj1);
+      obj1.a[0].b = 2;
+      obj1.a.splice(1, 1);
+      obj1.c.d = 4;
+      obj2.should.be.eql({ a: [ { b: 1 }, { b: 2 } ], c: { d: 3 } });
+    });
+  });
+
+  describe('#merge', function() {
+    it('should merge two objects correctly', function() {
+      var dest = { a: 1, b: 1 };
+      var source = { b: 2, c: 3 };
+      _.merge(dest, source).should.eql({ a: 1, b: 2, c: 3 });
+    });
+  });
+
   describe('#range', function() {
     it('should return an empty array if a number less than 1 is given', function() {
       _.range(0).should.be.eql([]);

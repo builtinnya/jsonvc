@@ -1,5 +1,7 @@
 'use strict';
 
+var uuid = require('node-uuid');
+
 /**
  * Returns true iff the argument is an array.
  *
@@ -31,6 +33,33 @@ var cloneArray = function cloneArray(x) {
 };
 
 /**
+ * Returns a new deep copy of the given plain object.
+ *
+ * @param {Object} x
+ * @returns {Object}
+ */
+var deepClone = function deepClone(x) {
+  return JSON.parse(JSON.stringify(x));
+};
+
+/**
+ * Merges objects by assigning source's properties to the destination object.
+ *
+ * @param {Object} dest
+ * @param {Object} source
+ * @returns {Object} Mutated destination object
+ */
+var merge = function merge(dest, source) {
+  var sourceKeys = Object.keys(source);
+
+  sourceKeys.forEach(function(sourceKey) {
+    dest[sourceKey] = source[sourceKey];
+  });
+
+  return dest;
+};
+
+/**
  * Returns an array of integers from 0 to n (exclusive).
  *
  * @param {number} n - An integer.
@@ -46,9 +75,31 @@ var range = function range(n) {
   return result;
 };
 
+/**
+ * Returns the number of milliseconds since January 1970 00:00:00 UTC.
+ *
+ * @returns {Number}
+ */
+var now = function now() {
+  return new Date().getTime();
+};
+
+/**
+ * Returns a new UUID (v4).
+ *
+ * @returns {String}
+*/
+var getUUID = function getUUID() {
+  return uuid.v4();
+};
+
 module.exports = {
   isArray: isArray,
   isObject: isObject,
   cloneArray: cloneArray,
-  range: range
+  deepClone: deepClone,
+  merge: merge,
+  range: range,
+  now: now,
+  getUUID: getUUID
 };

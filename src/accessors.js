@@ -32,8 +32,8 @@ var join = function join(path, part) {
  *
  * @param {Object} obj
  * @param {string} path
- * @param {} defaultValue
- * @returns {}
+ * @param {*} defaultValue
+ * @returns {*}
  */
 var get = function get(obj, path, defaultValue) {
   var parts = _toParts(path);
@@ -50,8 +50,8 @@ var get = function get(obj, path, defaultValue) {
  *
  * @param {Object} obj
  * @param {string} path
- * @param {} value
- * @returns {} The given object
+ * @param {*} value
+ * @returns {*} The given object
  */
 var put = function put(obj, path, value) {
   var parts = _toParts(path);
@@ -74,7 +74,7 @@ var put = function put(obj, path, value) {
  *
  * @param {Object} obj
  * @param {string} path
- * @returns {} The given object
+ * @returns {*} The given object
  */
 var del = function del(obj, path) {
   var parts = _toParts(path);
