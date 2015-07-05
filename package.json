@@ -2,7 +2,7 @@
   "author": "Naoto Yokoyama <builtinnya@gmail.com>",
   "name": "jsonvc",
   "version": "0.0.0",
-  "description": "A version control library for JSON data",
+  "description": "A simple library for versioning JSON documents.",
   "repository": {
     "type": "git",
     "url": "https://github.com/builtinnya/jsonvc"
