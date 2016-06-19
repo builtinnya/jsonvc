@@ -38,11 +38,11 @@
   "devDependencies": {
     "chai": "^3.0.0",
     "coveralls": "^2.11.2",
-    "istanbul": "^0.3.16",
-    "jscs": "^1.13.1",
+    "istanbul": "^0.4.3",
+    "jscs": "^3.0.4",
     "jshint": "^2.8.0",
     "mocha": "^2.2.5",
-    "mocha-lcov-reporter": "0.0.2"
+    "mocha-lcov-reporter": "1.2.0"
   },
   "dependencies": {
     "node-uuid": "^1.4.3"
