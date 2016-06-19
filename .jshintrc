@@ -3,7 +3,7 @@
   "node": true,
   "curly": false,
   "eqeqeq": true,
-  "latedef": true,
+  "latedef": false,
   "noarg": true,
   "undef": true,
   "unused": false,
